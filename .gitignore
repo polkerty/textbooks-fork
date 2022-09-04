@@ -40,3 +40,5 @@ next-env.d.ts
 terraform.tfvars
 .terraform.lock.hcl
 terraform.tfstate
+
+.terraform/
