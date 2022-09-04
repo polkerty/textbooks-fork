@@ -18,7 +18,7 @@ export default function Home() {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>
-                    Text ☎️ Books 📖
+                    Text 💬️ 📖 Books
                 </h1>
                 <p><em>We will text you books, paragraph by paragraph, over time!</em></p>
 
