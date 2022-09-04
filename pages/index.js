@@ -7,6 +7,9 @@ import PhoneInput from 'react-phone-number-input'
 
 export default function Home() {
     const [phoneNumber, setPhoneNumber] = useState();
+    const [sourceType, setSourceType] = useState('gutenberg');
+    const [sourceText, setSourceText] = useState('');
+    const [gutenbergUrl, setGutenbergUrl] = useState('');
 
     return (
         <div className={styles.container}>
@@ -23,15 +26,50 @@ export default function Home() {
                 <p><em>We will text you books, paragraph by paragraph, over time!</em></p>
 
                 <div className={styles.description}>
-                    <div style={{display: 'flex', alignItems: 'center'}}>
-                        <span className={styles.numberCircle}>1</span> Enter your phone number (we'll verify this
-                        later):
+                    <div className={styles.sectionTitle}>
+                        <span className={styles.numberCircle}>1</span> Enter your phone number
                     </div>
-                    <div>
+                    <div style={{color: '#666', fontSize: 'smaller'}}><em>We'll send you a text to confirm, and you can
+                        opt out
+                        at any time.</em></div>
+
+                    <div style={{padding: '10px'}}>
                         <PhoneInput
                             placeholder="Enter phone number"
                             value={phoneNumber}
                             onChange={setPhoneNumber}/>
+                    </div>
+                </div>
+                <div className={styles.description}>
+                    <div className={styles.sectionTitle}>
+                        <span className={styles.numberCircle}>2</span> What would you like us to text you?
+                    </div>
+                    <div style={{color: '#666', fontSize: 'smaller'}}><em>We'll text you a tiny chunk each day.</em>
+                    </div>
+                    <div>
+                        <div><label><input type={'radio'} id={"opt_project_gutenberg"} value={"gutenberg"}
+                                           defaultChecked={true}
+                                           onChange={e => setSourceType(e.target.value)}
+                                           name={"text_source"}/> A Project
+                            Gutenberg URL (plain text): <input style={{width: '100%'}} value={gutenbergUrl}
+                                                               placeholder={"eg https://www.gutenberg.org/files/1342/1342-0.txt"}
+                                                               onChange={e => setGutenbergUrl(e.target.value)}/></label>
+                        </div>
+                        <div>
+                            <label><input type={'radio'} id={"opt_custom_source"} value={"custom"}
+                                          onChange={e => setSourceType(e.target.value)}
+                                          name={"text_source"}/> Custom source
+                                text: <textarea style={{width: '100%'}} value={sourceText}
+                                                onChange={e => setSourceText(e.target.value)}
+                                                placeholder={'Paste some text'}/></label>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.description}>
+                    <div className={styles.sectionTitle}>
+                        <span className={styles.numberCircle}>3</span> How much should we text you?
+                    </div>
+                    <div>
                     </div>
                 </div>
 

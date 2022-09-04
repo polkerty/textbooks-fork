@@ -46,15 +46,15 @@
     font-size: 4rem;
 }
 
-.title,
-.description {
+.title {
     text-align: center;
 }
 
 .description {
     margin: 4rem 0;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    width: 100%;
 }
 
 .code {
@@ -142,4 +142,11 @@
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+}
+
+
+.sectionTitle {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
 }
